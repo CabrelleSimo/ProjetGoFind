@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projetgofind.controller.StolenItemsController"
+      stylesheets="@StolenItemsStyle.css"
+      spacing="10">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- Header -->
+    <HBox fx:id="headerBox" spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="backButton" text="Retour à l'accueil" onAction="#handleReturnToHome"/>
+        <Text fx:id="titleText" text="Objets Volés"/>
+    </HBox>
+
+    <!-- Main Content -->
+    <TabPane fx:id="mainTabPane">
+        <!-- Declare Tab -->
+        <Tab text="Déclarer un objet volé" closable="false">
+            <VBox fx:id="declareTab" spacing="10">
+                <Label fx:id="declareLabel" text="Déclarer un nouvel objet volé"/>
+
+                <GridPane fx:id="declareForm" hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="150" halignment="RIGHT"/>
+                        <ColumnConstraints minWidth="200"/>
+                    </columnConstraints>
+
+                    <Label text="Type d'objet:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="typeObjetField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="descriptionArea" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Numéro de série:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="numeroSerieField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Lieu du vol:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="lieuVolField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Date du vol:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="dateVolPicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Button fx:id="declareButton" text="Déclarer" onAction="#handleDeclarerObjetVole"/>
+            </VBox>
+        </Tab>
+
+        <!-- Search Tab -->
+        <Tab text="Rechercher un objet volé" closable="false">
+            <VBox fx:id="searchTab" spacing="10">
+                <Label fx:id="searchLabel" text="Rechercher un objet volé"/>
+
+                <GridPane fx:id="searchForm" hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="150" halignment="RIGHT"/>
+                        <ColumnConstraints minWidth="200"/>
+                    </columnConstraints>
+
+                    <Label text="Type d'objet:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="searchTypeField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Numéro de série:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="searchNumeroSerieField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Button fx:id="searchButton" text="Rechercher" onAction="#handleRechercherObjetVole"/>
+
+                <TableView fx:id="stolenItemsTable">
+                    <columns>
+                        <TableColumn fx:id="colTypeObjet" text="Type d'objet"/>
+                        <TableColumn fx:id="colDescription" text="Description"/>
+                        <TableColumn fx:id="colNumeroSerie" text="Numéro de série"/>
+                        <TableColumn fx:id="colLieuVol" text="Lieu du vol"/>
+                        <TableColumn fx:id="colDateVol" text="Date du vol"/>
+                        <TableColumn fx:id="colStatut" text="Statut"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

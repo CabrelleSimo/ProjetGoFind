@@ -1,0 +1,90 @@
+/* ========== BASE STYLE ========== */
+.root {
+    -fx-background-color: #EAE9E4;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* ========== HEADER ========== */
+#headerBox {
+    -fx-padding: 0 0 15 0;
+}
+
+#titleText {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #865C36;
+}
+
+/* ========== FORM ========== */
+#profileForm {
+    -fx-padding: 10px;
+}
+
+#profileForm .label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #865C36;
+}
+
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #865C36;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #865C36;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.3), 0, 0, 0, 3px);
+}
+
+.text-field:disabled {
+    -fx-opacity: 1.0;
+    -fx-background-color: #f5f5f5;
+}
+
+/* ========== BUTTONS ========== */
+.button {
+    -fx-background-color: #865C36;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.3), 0, 2, 0, 1px);
+}
+
+.button:hover {
+    -fx-background-color: #9C6F40;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.4), 0, 4, 0, 2px);
+}
+
+.button:pressed {
+    -fx-background-color: #6E4A2C;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.2), 0, 1, 0, 1px);
+    -fx-translate-y: 1px;
+}
+
+/* Specific buttons */
+#backButton {
+    -fx-background-color: #4CAF50;
+}
+
+#deleteButton {
+    -fx-background-color: #f44336;
+}
+
+/* ========== BUTTON CONTAINER ========== */
+#buttonBox {
+    -fx-padding: 15px 0 0 0;
+    -fx-alignment: center;
+}
+#profileTitle {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}

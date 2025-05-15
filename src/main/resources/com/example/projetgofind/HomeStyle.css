@@ -1,0 +1,96 @@
+/* ========== BASE STYLE ========== */
+.root {
+    -fx-background-color: #EAE9E4;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* ========== BUTTONS ========== */
+.button {
+    -fx-background-color: #865C36;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.3), 0, 2, 0, 1px);
+}
+
+.button:hover {
+    -fx-background-color: #9C6F40;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.4), 0, 4, 0, 2px);
+}
+
+.button:pressed {
+    -fx-background-color: #6E4A2C;
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.2), 0, 1, 0, 1px);
+    -fx-translate-y: 1px;
+}
+
+/* Specific buttons */
+#deconnexionButton {
+    -fx-background-color: #f44336;
+}
+
+#quitterButton {
+    -fx-background-color: #607D8B;
+}
+
+/* ========== SERVICE BOXES ========== */
+#stolenItemsBox, #carpoolingBox, #rentalBox {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+    -fx-border-color: #EAE9E4;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
+    /* Ajout de dimensions pour rendre les box plus longues */
+    -fx-pref-width: 300px;  /* Largeur souhaitée */
+    -fx-pref-height: 300px; /* Hauteur souhaitée */
+}
+
+
+#stolenItemsBox:hover, #carpoolingBox:hover, #rentalBox:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(134, 92, 54, 0.2), 8, 0, 0, 0);
+}
+#carpoolingBox {
+    height: 350px;
+}
+
+#stolenItemsBox, #rentalBox {
+    height: 320px;
+}
+
+.image-uniform {
+    fit-width: 120px;
+    fit-height: 120px;
+}
+
+/* ========== LABELS ========== */
+#welcomeLabel {
+    -fx-text-fill: #865C36;
+    -fx-font-weight: bold;
+}
+
+#actionLabel {
+    -fx-text-fill: #5d4037;
+    -fx-font-size: 16px;
+}
+
+/* ========== FOOTER ========== */
+#footer {
+    -fx-background-color: #865C36;
+}
+
+#copyrightLabel {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+.vbox,Label{
+-fx-font-size: 14px;
+}
+
+#welcomeLabel{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #865C36;
+}

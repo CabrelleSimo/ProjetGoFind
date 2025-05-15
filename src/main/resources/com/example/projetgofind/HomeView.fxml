@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.projetgofind.controller.HomeController"
+            stylesheets="@HomeStyle.css">
+
+    <!-- Top Menu Bar -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+            <Button fx:id="profileButton" text="Mon Profil" onAction="#handleManageProfile"/>
+            <Button id="deconnexionButton" text="Déconnexion" onAction="#handleLogout"/>
+            <Button id="quitterButton" text="Quitter" onAction="#handleExit"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <VBox fx:id="mainContainer" alignment="CENTER" spacing="40.0" style="-fx-padding: 30;">
+            <Label fx:id="welcomeLabel" text="Bienvenue sur GoFind">
+                <font>
+                    <Font size="28.0"/>
+                </font>
+            </Label>
+
+            <!-- Services Grid -->
+            <GridPane hgap="30" vgap="20" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="300"/>
+                    <ColumnConstraints prefWidth="300"/>
+                    <ColumnConstraints prefWidth="300"/>
+                </columnConstraints>
+
+                <!-- Objets Volés Service -->
+                <VBox fx:id="stolenItemsBox" alignment="TOP_CENTER" spacing="10"
+                      style="-fx-background-color: #f9f9f9; -fx-padding: 20; -fx-background-radius: 10;"
+                      prefHeight="250" prefWidth="300">
+                    <ImageView fx:id="stolenItemsImage" fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="image-uniform"/>
+                    <Label text="Déclarez ce que vous avez perdu," wrapText="true" textAlignment="CENTER"/>
+                    <Label text="vérifiez ce que vous voulez acheter" wrapText="true" textAlignment="CENTER"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button fx:id="stolenItemsButton" text="Objets volés" onAction="#handleStolenItems"
+                            style="-fx-background-radius: 20;"/>
+                </VBox>
+
+                <!-- Covoiturage Service -->
+                <VBox fx:id="carpoolingBox" alignment="TOP_CENTER" spacing="10"
+                      style="-fx-background-color: #f9f9f9; -fx-padding: 20; -fx-background-radius: 10;"
+                      prefHeight="250" prefWidth="300"
+                      GridPane.columnIndex="1">
+                    <ImageView fx:id="carpoolingImage" fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="image-uniform"/>
+                    <Label text="Roulez ensemble ,dépensez moins," wrapText="true" textAlignment="CENTER"/>
+                    <Label text="vivez plus" wrapText="true" textAlignment="CENTER"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button fx:id="carpoolingButton" text="Covoiturage" onAction="#handleCarpooling"
+                            style="-fx-background-radius: 20;"/>
+                </VBox>
+
+                <!-- Colocation Service -->
+                <VBox fx:id="rentalBox" alignment="TOP_CENTER" spacing="10"
+                      style="-fx-background-color: #f9f9f9; -fx-padding: 20; -fx-background-radius: 10;"
+                      prefHeight="250" prefWidth="300"
+                      GridPane.columnIndex="2">
+                    <ImageView fx:id="rentalImage" fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="image-uniform"/>
+                    <Label text="Partagez plus qu'un toit," wrapText="true" textAlignment="CENTER"/>
+                    <Label text="trouvez votre espace idéal" wrapText="true" textAlignment="CENTER"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button fx:id="rentalButton" text="Colocation" onAction="#handleRental"
+                            style="-fx-background-radius: 20;"/>
+                </VBox>
+            </GridPane>
+
+            <Separator fx:id="separator" prefWidth="600"/>
+
+            <Label fx:id="actionLabel" text="Que souhaitez-vous faire aujourd'hui ?" textAlignment="CENTER">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+        </VBox>
+    </center>
+
+    <!-- Bottom Footer -->
+    <bottom>
+        <HBox fx:id="footer" alignment="CENTER" style="-fx-padding: 15;">
+            <Label fx:id="copyrightLabel" text="© 2025 GoFind - Tous droits réservés"/>
+        </HBox>
+    </bottom>
+</BorderPane>

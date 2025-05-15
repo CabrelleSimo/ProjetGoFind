@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgofind.controller.MainController">
+    <top>
+        <HBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #3F51B5; -fx-padding: 10;">
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <Label fx:id="welcomeLabel" text="Bienvenue sur GoFind" style="-fx-text-fill: white;">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Button onAction="#handleLogoutButton" text="Déconnexion" style="-fx-background-color: transparent; -fx-text-fill: white;" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="30.0">
+            <Label text="Que souhaitez-vous faire aujourd'hui?" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+
+            <HBox alignment="CENTER" spacing="20.0">
+                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #E8EAF6; -fx-padding: 20; -fx-background-radius: 10;">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    </ImageView>
+                    <Button onAction="#handleTrajetButton" text="Covoiturage" style="-fx-background-color: #3F51B5; -fx-text-fill: white;" />
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #E8EAF6; -fx-padding: 20; -fx-background-radius: 10;">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    </ImageView>
+                    <Button onAction="#handleLocationButton" text="Colocation" style="-fx-background-color: #3F51B5; -fx-text-fill: white;" />
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #E8EAF6; -fx-padding: 20; -fx-background-radius: 10;">
+                    <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    </ImageView>
+                    <Button onAction="#handleObjetButton" text="Objets volés" style="-fx-background-color: #3F51B5; -fx-text-fill: white;" />
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

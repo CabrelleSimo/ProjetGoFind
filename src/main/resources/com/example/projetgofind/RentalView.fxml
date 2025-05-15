@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projetgofind.controller.RentalController"
+      stylesheets="@RentalStyle.css"
+      spacing="10" style="-fx-padding: 20;">
+
+    <!-- Header -->
+    <HBox fx:id="headerBox" spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="backButton" text="Retour à l'accueil" onAction="#handleRetourAccueil"/>
+        <Text fx:id="titleText" text="Colocation"/>
+    </HBox>
+
+    <TabPane fx:id="mainTabPane">
+        <Tab text="Publier une location" closable="false">
+            <VBox fx:id="publishTab" spacing="10">
+                <GridPane fx:id="publishForm" hgap="10" vgap="10">
+                    <Label text="Lieu:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="publierAdresseField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                    <Label text="Type de location:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <ComboBox fx:id="publierTypeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <TextArea fx:id="publierDescriptionArea" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                    <Label text="Prix par mois:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <TextField fx:id="publierPrixField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <Label text="Date de publication:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <DatePicker fx:id="publierDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                    <Button fx:id="publishButton" text="Publier" onAction="#handlePublierLocation"
+                            GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                </GridPane>
+                <Button fx:id="viewMyRentalsButton" text="Mes locations publiées" onAction="#handleVoirMesLocationsPubliees"/>
+            </VBox>
+        </Tab>
+
+        <Tab text="Rechercher une location" closable="false">
+            <VBox fx:id="searchTab" spacing="10">
+                <HBox fx:id="searchForm" spacing="10">
+                    <TextField fx:id="rechercherAdresseField" promptText="Adresse"/>
+                    <TextField fx:id="rechercherTypeField" promptText="Type de location"/>
+                    <Button fx:id="searchButton" text="Rechercher" onAction="#handleRechercherLocation"/>
+                    <Button fx:id="viewMyReservationsButton" text="Mes réservations" onAction="#handleVoirMesReservations"/>
+                </HBox>
+
+                <TableView fx:id="locationsTable" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="colAdresse" text="Adresse">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="adresse"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colType" text="Type">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="typeLocation"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDescription" text="Description">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="description"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colPrix" text="Prix">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="prix"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDatePublication" text="Date publication">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="datePublication"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+
+                <Button fx:id="reserveButton" text="Réserver" onAction="#handleReserverLocation"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #EAE9E4;" stylesheets="@CarpoolingStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgofind.controller.CarpoolingController">
+   <children>
+
+       <!-- Header -->
+       <HBox fx:id="headerBox" alignment="CENTER_LEFT" spacing="10">
+      <children>
+              <Button fx:id="backButton" onAction="#handleRetourAccueil" text="Retour à l'accueil" />
+              <Text fx:id="titleText" text="Covoiturage" />
+      </children>
+       </HBox>
+
+       <TabPane fx:id="mainTabPane">
+      <tabs>
+              <Tab closable="false" text="Publier un trajet">
+                 <content>
+                     <VBox fx:id="publishTab" spacing="10">
+                        <children>
+                            <GridPane fx:id="publishForm" hgap="10" vgap="10">
+                               <children>
+                                   <Label text="Lieu de Départ:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                   <TextField fx:id="publierDepartField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                   <Label text="Lieu d'arrivée:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                   <TextField fx:id="publierDestinationField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                   <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                   <DatePicker fx:id="publierDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                   <Label text="Heure (HH:mm):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                   <TextField fx:id="publierHeureField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                   <Label text="Places disponibles:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                   <Spinner fx:id="publierPlacesSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                   <Label text="Prix par personne:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                                   <TextField fx:id="publierPrixField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                                   <Label text="Description voiture:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                                   <TextArea fx:id="publierDescriptionArea" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                                   <Button fx:id="publishButton" onAction="#handlePublierTrajet" text="Publier" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                               </children>
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                            </GridPane>
+                            <Button fx:id="viewMyTripsButton" onAction="#handleVoirMesTrajetsPublies" text="Mes trajets publiés" />
+                        </children>
+                     </VBox>
+                 </content>
+              </Tab>
+
+              <Tab closable="false" text="Rechercher un trajet">
+         <content>
+                     <VBox fx:id="searchTab" spacing="10">
+                        <children>
+                            <HBox fx:id="searchForm" alignment="CENTER_LEFT" spacing="10">
+                               <children>
+                                   <TextField fx:id="rechercherDepartField" promptText="Départ" />
+                                   <TextField fx:id="rechercherDestinationField" promptText="Destination" />
+                                   <DatePicker fx:id="rechercherDatePicker" promptText="Date" />
+                                   <Button fx:id="searchButton" onAction="#handleRechercherTrajet" text="Rechercher" />
+                                   <Button fx:id="viewMyReservationsButton" onAction="#handleVoirMesReservations" text="Mes réservations" />
+                               </children>
+                            </HBox>
+
+                            <TableView fx:id="trajetsTable" prefHeight="300">
+                                <columns>
+                                    <TableColumn fx:id="colDepart" text="Départ">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="depart" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colDestination" text="Destination">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="destination" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colDate" text="Date">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="dateDepart" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colHeure" text="Heure">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="heureDepart" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colPlaces" text="Places">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="placesDisponibles" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colPrix" text="Prix">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="prix" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colDescriptionVoiture" text="Description véhicule">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="descriptionVoiture" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                            </TableView>
+
+                            <Button fx:id="reserveButton" onAction="#handleReserverTrajet" text="Réserver" />
+                        </children>
+                     </VBox>
+         </content>
+              </Tab>
+      </tabs>
+       </TabPane>
+   </children>
+</VBox>
