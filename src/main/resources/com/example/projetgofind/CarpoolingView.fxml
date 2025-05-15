@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #EAE9E4;" stylesheets="@CarpoolingStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgofind.controller.CarpoolingController">
+<VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #EAE9E4;" stylesheets="@style/CarpoolingStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgofind.controller.CarpoolingController">
    <children>
 
        <!-- Header -->

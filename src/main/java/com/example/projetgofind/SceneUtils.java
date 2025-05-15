@@ -8,7 +8,7 @@ import javafx.stage.Window;
 
 public class SceneUtils {
     public static Stage getCurrentStage(ActionEvent event) {
-        // Solution pour MenuItem
+
         if (event.getSource() instanceof MenuItem) {
             MenuItem menuItem = (MenuItem) event.getSource();
             Window ownerWindow = menuItem.getParentPopup().getOwnerWindow();
@@ -16,7 +16,7 @@ public class SceneUtils {
                 return (Stage) ownerWindow;
             }
         }
-        // Solution standard pour les Nodes
+
         else if (event.getSource() instanceof Node) {
             return (Stage) ((Node) event.getSource()).getScene().getWindow();
         }

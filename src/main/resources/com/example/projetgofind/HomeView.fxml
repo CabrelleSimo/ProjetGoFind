@@ -9,7 +9,7 @@
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.projetgofind.controller.HomeController"
-            stylesheets="@HomeStyle.css">
+            stylesheets="@style/HomeStyle.css">
 
     <!-- Top Menu Bar -->
     <top>
@@ -55,7 +55,7 @@
                       prefHeight="250" prefWidth="300"
                       GridPane.columnIndex="1">
                     <ImageView fx:id="carpoolingImage" fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="image-uniform"/>
-                    <Label text="Roulez ensemble ,dépensez moins," wrapText="true" textAlignment="CENTER"/>
+                    <Label text="Roulez ensemble, dépensez moins" wrapText="true" textAlignment="CENTER"/>
                     <Label text="vivez plus" wrapText="true" textAlignment="CENTER"/>
                     <Region VBox.vgrow="ALWAYS"/>
                     <Button fx:id="carpoolingButton" text="Covoiturage" onAction="#handleCarpooling"

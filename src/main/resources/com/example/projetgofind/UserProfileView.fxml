@@ -7,7 +7,7 @@
 <VBox xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.projetgofind.controller.UserProfileController"
-      stylesheets="@UserProfileStyle.css"
+      stylesheets="@style/UserProfileStyle.css"
       spacing="10">
 
     <padding>

@@ -18,8 +18,5 @@ public class DatabaseConnection {
         }
     }
 
-    // Gardez l'ancienne méthode pour la compatibilité si nécessaire
-    public static Connection getNewConnection() throws SQLException {
-        return getConnection();
-    }
+
 }
